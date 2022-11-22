@@ -4,6 +4,8 @@
 std::vector<HWND*> Window::hWndList; // window handle list
 std::vector<Window*> Window::windowList; // window object list
 
+#define COLOR_BIT_DEPTH 32
+
 LRESULT CALLBACK WindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
 	switch (uMsg) {
 	case WM_CLOSE:
@@ -50,7 +52,7 @@ LRESULT CALLBACK WindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam) 
 		buffer_bitmap_info.bmiHeader.biWidth = window->getWidth();
 		buffer_bitmap_info.bmiHeader.biHeight = window->getHeight();
 		buffer_bitmap_info.bmiHeader.biPlanes = 1;
-		buffer_bitmap_info.bmiHeader.biBitCount = 32;
+		buffer_bitmap_info.bmiHeader.biBitCount = COLOR_BIT_DEPTH;
 		buffer_bitmap_info.bmiHeader.biCompression = BI_RGB;
 
 		window->setBufferBitmapInfo(buffer_bitmap_info);
@@ -110,7 +112,7 @@ Window::Window() : m_hInstance(GetModuleHandle(nullptr)) {
 	this->buffer_bitmap_info.bmiHeader.biWidth = this->width;
 	this->buffer_bitmap_info.bmiHeader.biHeight = this->height;
 	this->buffer_bitmap_info.bmiHeader.biPlanes = 1;
-	this->buffer_bitmap_info.bmiHeader.biBitCount = 32;
+	this->buffer_bitmap_info.bmiHeader.biBitCount = COLOR_BIT_DEPTH;
 	this->buffer_bitmap_info.bmiHeader.biCompression = BI_RGB;
 
 	Window::hWndList.push_back(&this->m_hWnd);
@@ -119,7 +121,7 @@ Window::Window() : m_hInstance(GetModuleHandle(nullptr)) {
 	ShowWindow(m_hWnd, SW_SHOW);
 }
 
-Window::Window(LPCWSTR window_name) {
+Window::Window(LPCWSTR window_name) : m_hInstance(GetModuleHandle(nullptr)) {
 	const wchar_t* CLASS_NAME = L"Win32 Window Class";
 
 	WNDCLASS wndClass = {};
@@ -170,7 +172,7 @@ Window::Window(LPCWSTR window_name) {
 	this->buffer_bitmap_info.bmiHeader.biWidth = this->width;
 	this->buffer_bitmap_info.bmiHeader.biHeight = this->height;
 	this->buffer_bitmap_info.bmiHeader.biPlanes = 1;
-	this->buffer_bitmap_info.bmiHeader.biBitCount = 32;
+	this->buffer_bitmap_info.bmiHeader.biBitCount = COLOR_BIT_DEPTH;
 	this->buffer_bitmap_info.bmiHeader.biCompression = BI_RGB;
 
 	Window::hWndList.push_back(&this->m_hWnd);

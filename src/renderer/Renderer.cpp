@@ -2,6 +2,8 @@
 #include "../window/Window.h"
 #include "../utils/Utils.h"
 #include <iostream>
+#include <assert.h>
+
 
 Renderer::Renderer() {
 	this->window = new Window();
@@ -80,6 +82,65 @@ void Renderer::Draw_Gradient(unsigned int color_bottom_left, unsigned int color_
 			// this->window->setPixelRGB(i, j, Utils::RGBtoHex(r_new_t, g_new_t, b_new_t));
 
 			this->window->setPixelRGB(i, j, Utils::RGBtoHex(r_final, g_final, b_final));
+		}
+	}
+}
+
+void Renderer::Draw_Line(unsigned int x1, unsigned int y1, unsigned int x2, unsigned int y2, unsigned int color) {
+	// make sure x-coordinates are on the screen
+	assert(x1 >= 0 && x1 < this->window->getWidth());
+	assert(x2 >= 0 && x2 < this->window->getWidth());
+
+	// make sure y-coordinates are on the screen
+	assert(y1 >= 0 && y1 < this->window->getHeight());
+	assert(y2 >= 0 && y2 < this->window->getHeight());
+
+	// make sure first set of coordinates are less than the second set
+	assert(x1 < x2);
+	assert(y1 < y2);
+
+
+	double slope = ((y2 - y1) * 1.0) / ((x2 - x1) * 1.0);
+
+	double multiplier = 0.0;
+
+	while (true) {
+		this->window->setPixelRGB(x1 + (int) (slope * multiplier * (x2 - x1)), y1 + (int)(slope * multiplier * (y2 - y1)), color);
+
+		multiplier += 0.0001;
+
+		if (x1 + (int)(slope * multiplier * (x2 - x1)) > x2) {
+			break;
+		}
+	}
+}
+
+void Renderer::Draw_Circle(unsigned int x1, unsigned int y1, unsigned int radius, unsigned int color) {
+	// make sure coordinates are on the screen
+	assert(x1 >= 0 && x1 < this->window->getWidth());
+	assert(y1 >= 0 && y1 < this->window->getHeight());
+
+	
+
+}
+
+void Renderer::Draw_Rect(unsigned int x1, unsigned int y1, unsigned int x2, unsigned int y2, unsigned int color) {
+	// make sure x-coordinates are on the screen
+	assert(x1 >= 0 && x1 < this->window->getWidth());
+	assert(x2 >= 0 && x2 < this->window->getWidth());
+
+	// make sure y-coordinates are on the screen
+	assert(y1 >= 0 && y1 < this->window->getHeight());
+	assert(y2 >= 0 && y2 < this->window->getHeight());
+
+	// make sure first set of coordinates are less than the second set
+	assert(x1 < x2);
+	assert(y1 < y2);
+
+
+	for (int i = 0; i < x2 - x1; i++) {
+		for (int j = 0; j < y2 - y1; j++) {
+			this->window->setPixelRGB(x1 + i, y2 + j, color);
 		}
 	}
 }

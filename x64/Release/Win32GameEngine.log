@@ -1,0 +1,22 @@
+﻿  Engine.cpp
+  main.cpp
+C:\Users\joeyb\Projects\Coding\C++\Win32GameEngine\src\main.cpp(31,20): warning C4305: '+=': truncation from 'double' to 'float'
+  Renderer.cpp
+C:\Users\joeyb\Projects\Coding\C++\Win32GameEngine\src\renderer\Renderer.cpp(55,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\joeyb\Projects\Coding\C++\Win32GameEngine\src\renderer\Renderer.cpp(56,15): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\joeyb\Projects\Coding\C++\Win32GameEngine\src\renderer\Renderer.cpp(57,15): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\joeyb\Projects\Coding\C++\Win32GameEngine\src\renderer\Renderer.cpp(58,15): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\joeyb\Projects\Coding\C++\Win32GameEngine\src\renderer\Renderer.cpp(60,15): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\joeyb\Projects\Coding\C++\Win32GameEngine\src\renderer\Renderer.cpp(61,15): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\joeyb\Projects\Coding\C++\Win32GameEngine\src\renderer\Renderer.cpp(62,15): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\joeyb\Projects\Coding\C++\Win32GameEngine\src\renderer\Renderer.cpp(75,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\joeyb\Projects\Coding\C++\Win32GameEngine\src\renderer\Renderer.cpp(76,16): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\joeyb\Projects\Coding\C++\Win32GameEngine\src\renderer\Renderer.cpp(77,16): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\joeyb\Projects\Coding\C++\Win32GameEngine\src\renderer\Renderer.cpp(78,16): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+  Window.cpp
+  Utils.cpp
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+  All 149 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  Win32GameEngine.vcxproj -> C:\Users\joeyb\Projects\Coding\C++\Win32GameEngine\x64\Release\Win32GameEngine.exe
