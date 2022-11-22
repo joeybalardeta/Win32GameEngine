@@ -1,2 +1,3 @@
-﻿  Window.cpp
+﻿  main.cpp
+C:\Users\joeyb\Projects\Coding\C++\Win32GameEngine\src\main.cpp(31,20): warning C4305: '+=': truncation from 'double' to 'float'
   Win32GameEngine.vcxproj -> C:\Users\joeyb\Projects\Coding\C++\Win32GameEngine\x64\Debug\Win32GameEngine.exe
